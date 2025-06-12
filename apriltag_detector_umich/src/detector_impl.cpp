@@ -27,11 +27,12 @@
 #include <opencv2/core/core.hpp>
 #include <pluginlib/class_list_macros.hpp>
 
+/*
 static rclcpp::Logger get_logger()
 {
   return (rclcpp::get_logger("apriltag_umich"));
 }
-
+*/
 static apriltag_detector_t * recast(void * p)
 {
   return (reinterpret_cast<apriltag_detector_t *>(p));
@@ -106,7 +107,7 @@ void DetectorImpl::makeDetector()
   detector_ = apriltag_detector_create();
   tag_family_ = make_tag_family(family_);
   if (!tag_family_) {
-    RCLCPP_ERROR_STREAM(get_logger(), "invalid tag family: " << family_);
+    //RCLCPP_ERROR_STREAM(get_logger(), "invalid tag family: " << family_);
     throw(std::runtime_error("invalid tag family specified!"));
   }
   apriltag_detector_add_family_bits(

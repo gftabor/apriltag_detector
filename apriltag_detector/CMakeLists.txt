@@ -16,7 +16,11 @@
 cmake_minimum_required(VERSION 3.16)
 project(apriltag_detector)
 
-add_compile_options(-Wall -Wextra -Wpedantic -Werror)
+if(CMAKE_COMPILER_IS_GNUCXX)
+  add_compile_options(-Wall -Wextra -Wpedantic -Werror )
+endif(CMAKE_COMPILER_IS_GNUCXX)
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
 
 # find dependencies
 find_package(ament_cmake REQUIRED)

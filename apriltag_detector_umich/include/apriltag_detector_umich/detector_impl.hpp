@@ -17,7 +17,7 @@
 #define APRILTAG_DETECTOR_UMICH__DETECTOR_IMPL_HPP_
 
 #include <apriltag_msgs/msg/april_tag_detection_array.hpp>
-#include <rclcpp/rclcpp.hpp>
+//#include <rclcpp/rclcpp.hpp>
 #include <string>
 
 namespace cv
